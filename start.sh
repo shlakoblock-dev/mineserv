@@ -7,4 +7,4 @@ playit --secret "$PLAYIT_SECRET" &
 sleep 5
 
 echo "Запускаем Paper сервер 1.20.1..."
-exec java -Xmx1G -jar server.jar nogui
+exec java -Xmx400M -jar server.jar nogui
