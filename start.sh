@@ -16,4 +16,4 @@ ngrok tcp 25565 --log=stdout &
 sleep 2
 
 # Запускаем Forge сервер как основной процесс
-exec java -Xmx1G -jar forge-1.20.1-47.4.18-universal.jar nogui
+exec java -Xmx1G -jar forge-1.20.1-47.2.17-universal.jar nogui
