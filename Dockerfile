@@ -5,13 +5,13 @@ RUN apk add --no-cache curl
 WORKDIR /app
 
 # 1. Скачиваем и устанавливаем Forge 1.20.1
-RUN curl -L -o forge-installer.jar "https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.2.17/forge-1.20.1-47.2.17-installer.jar" && \
+RUN curl -L -o forge-installer.jar "https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.4.18/forge-1.20.1-47.4.18-installer.jar" && \
     java -jar forge-installer.jar --installServer && \
     rm forge-installer.jar
 
 # 2. Создаём папку mods и кладём туда Create (прямая ссылка Modrinth)
 RUN mkdir mods && \
-    curl -L -o mods/create-1.20.1-0.5.1.i.jar "https://cdn.modrinth.com/data/LNytGWDc/versions/0.5.1.i/create-1.20.1-0.5.1.i.jar"
+    curl -L -o mods/create-1.20.1-0.5.1.i.jar "https://cdn.modrinth.com/data/LNytGWDc/versions/6.0.8/create-1.20.1-6.0.8.jar"
 
 # 3. Принимаем EULA
 RUN echo "eula=true" > eula.txt
