@@ -1,14 +1,11 @@
 #!/bin/sh
 
-if [ -z "$NGROK_AUTH_TOKEN" ]; then
-  echo "ОШИБКА: переменная NGROK_AUTH_TOKEN не задана!"
-  exit 1
-fi
+# Вставляем токен напрямую (замени на свой, если надо)
+NGROK_TOKEN="3D6BfjFOACUPaerNo6YA4Jp6IGi_6JbDA5dLLngu8dEDtXemW"
 
-echo "Авторизуем ngrok..."
-ngrok authtoken "$NGROK_AUTH_TOKEN"
-echo "Запускаем ngrok..."
-ngrok tcp 25565 --log=stdout &
+echo "Запускаем ngrok v3..."
+ngrok tcp 25565 --authtoken "$NGROK_TOKEN" --log=stdout &
+
 sleep 3
 
 echo "Запускаем Minecraft сервер..."
