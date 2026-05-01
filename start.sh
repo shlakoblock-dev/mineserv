@@ -1,12 +1,11 @@
 #!/bin/sh
 
-# Вставляем токен напрямую (замени на свой, если надо)
-NGROK_TOKEN="3D6BfjFOACUPaerNo6YA4Jp6IGi_6JbDA5dLLngu8dEDtXemW"
+# Вставь сюда свой Secret Key из playit.gg
+PLAYIT_SECRET="514e2bd3d78ade26ef14b93a9a658bf79a6800f408d13d9c9eef25eaf0a22bb6"
 
-echo "Запускаем ngrok v3..."
-ngrok tcp 25565 --authtoken "$NGROK_TOKEN" --log=stdout &
-
-sleep 3
+echo "Запускаем playit.gg агент..."
+playit -s "$PLAYIT_SECRET" --tcp 25565 &
+sleep 5
 
 echo "Запускаем Minecraft сервер..."
-exec java -Xmx1G -jar $(ls /app/forge-*.jar | head -n 1) nogui
+exec java -Xmx1G -jar $(ls /app/forge-*universal.jar | head -n 1) nogui
