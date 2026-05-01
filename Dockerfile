@@ -5,7 +5,7 @@ RUN apk add --no-cache curl
 WORKDIR /app
 
 # 1. Скачиваем и устанавливаем Forge 1.20.1
-RUN curl -L -o forge-installer.jar "https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.4.18/forge-1.20.1-47.4.18-installer.jar" && \
+RUN curl -L -o forge-installer.jar "https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.2.17/forge-1.20.1-47.2.17-installer.jar" && \
     java -jar forge-installer.jar --installServer && \
     rm forge-installer.jar
 
