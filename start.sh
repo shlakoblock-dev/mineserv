@@ -7,7 +7,7 @@ if [ -z "$NGROK_AUTH_TOKEN" ]; then
 fi
 
 # Авторизуем ngrok
-ngrok config add-authtoken "$NGROK_AUTH_TOKEN"
+ngrok config add-authtoken "3D6BfjFOACUPaerNo6YA4Jp6IGi_6JbDA5dLLngu8dEDtXemW"
 
 # Запускаем ngrok в фоновом режиме (tcp-туннель на порт 25565)
 ngrok tcp 25565 --log=stdout &
